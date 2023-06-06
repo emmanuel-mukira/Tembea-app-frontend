@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+### Author : EMMANUEL MUKIRA 5TH JUNE 2023
+****
+## Project Description
+The travel app is a web-based platform that simplifies the process of booking flights and hotels. It provides users with an intuitive interface to search for available flights and accommodations based on their preferences. Users can create accounts, view and manage their booked trips, and make new bookings. The app integrates with external APIs to fetch real-time data, ensuring accurate and up-to-date information. By streamlining travel planning and enhancing the user experience, the travel app aims to make trip booking convenient and efficient for users.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## SCREENSHOTS
+- link 1
+- link 2
 
-## Available Scripts
 
-In the project directory, you can run:
+********
+## SetUp Instruction
+### Requirements
+* [Lang](lang Url)
+* [Framework](Framework URL)
+* Text editor eg [Visual Studio Code](https://code.visualstudio.com/download)
+* [Testing Platform](Platform URL)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Getting Files
+* Fork the repo
+- Create a new branch in your terminal (git checkout -b improve-feature)
+- Install the prerequisites
+- Make appropriate changes in file(s)
+- Run the server to see the changes
+- Add the changes and commit them (git commit -am "Improve App")
+- Push to the branch (git push origin improve-app)
+- Create a Pull request
+* Open the folder location on terminal and use the following command to run app:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How To Run It
+>  $ npm start
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> 
+## Live Link
+Or you can access the web application directly via this [LINK.](link.com/)
+*****
+## Dependencies
+- Package Name
+- Package Name
+- Package Name
+- Package Name
+*****
+## Technologies Used
+1. React
+2. JavaScript
+3. CSS
+4. HTML
+*****
+## Contact Information
+* Email : emmanuelgichigo@gmail.com
+*****
+## [License](LICENSE)
+MIT License
+Copyright (c) 2023 EMMANUEL MUKIRA

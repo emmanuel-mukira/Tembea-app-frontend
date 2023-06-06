@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import CardItem from '../CardItem';
 import '../Cards.css';
 
-
 function Hotels() {
   const [hotels, setHotels] = useState([]);
 
@@ -25,8 +24,16 @@ function Hotels() {
                   key={hotel.id}
                   src={hotel.image_url}
                   text={hotel.name}
-                  label={hotel.star_rating}
-                  path={`/hotels/${hotel.id}`} // Assuming a specific hotel details page
+                  label='Hotel'
+                  path={`/hotels/${hotel.id}`}
+                  data={{
+                    Location: hotel.location,
+                    Address: hotel.address,
+                    Country: hotel.country,
+                    'Star Rating': hotel.star_rating,
+                    Price: hotel.price
+                    // Add more hotel-specific details as needed
+                  }}
                 />
               ))}
             </ul>

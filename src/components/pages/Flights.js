@@ -24,8 +24,15 @@ function Flights() {
                   key={flight.id}
                   src={flight.image_url}
                   text={flight.flight_number}
-                  label={flight.status}
-                  path={`/flights/${flight.id}`} // Assuming a specific flight details page
+                  label='Flight'
+                  path={`/flights/${flight.id}`}
+                  data={{
+                    'Departure Airport': flight.departure_airport,
+                    'Arrival Airport': flight.arrival_airport,
+                    'Arrival Country': flight.arrival_country,
+                    'Departure Time': flight.departure_time,
+                    'Price': flight.price,
+                  }}
                 />
               ))}
             </ul>

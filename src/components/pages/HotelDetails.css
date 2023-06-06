@@ -1,0 +1,38 @@
+.hotel-details {
+    margin-top: 20px;
+  }
+  
+  .hotel-details__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hotel-details__image {
+    width: 700px;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .hotel-details__table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  .hotel-details__table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .hotel-details__table td:first-child {
+    width: 120px;
+    font-weight: bold;
+  }
+  
+  .hotel-details__table strong {
+    font-weight: bold;
+  }
+  

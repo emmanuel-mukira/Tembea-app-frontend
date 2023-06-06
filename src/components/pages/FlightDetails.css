@@ -1,0 +1,38 @@
+.flight-details {
+    margin-top: 20px;
+  }
+  
+  .flight-details__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .flight-details__image {
+    width: 700px;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .flight-details__table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  .flight-details__table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .flight-details__table td:first-child {
+    width: 120px;
+    font-weight: bold;
+  }
+  
+  .flight-details__table strong {
+    font-weight: bold;
+  }
+  

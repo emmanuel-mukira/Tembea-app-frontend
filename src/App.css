@@ -46,7 +46,7 @@
 }
 
 .sign-in{
-  /* background-image: url('/images/img-2.jpg'); */
+  /* background-image: url('./images/image-1.jpg')center center/cover no-repeat;;  */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

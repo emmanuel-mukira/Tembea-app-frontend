@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './Bookings.css';
-// import { AuthContext } from './AuthContext';
+import { AuthContext } from './AuthContext';
 
 const BookingsPage = () => {
+  const { user_id } = useContext(AuthContext); // Access userId from AuthContext
   const [bookings, setBookings] = useState([]);
   const [checkInDate, setCheckInDate] = useState('');
   const [checkOutDate, setCheckOutDate] = useState('');
@@ -10,12 +11,15 @@ const BookingsPage = () => {
   const [hotelName, setHotelName] = useState('');
 
   useEffect(() => {
+    console.log( user_id);
+
     // Fetch the list of bookings from the backend API
-    fetch('http://localhost:9292/bookings')
-      .then(response => response.json())
-      .then(data => setBookings(data))
-      .catch(error => console.error(error));
-  }, []);
+    fetch(`http://localhost:9292/bookings?user_id=${user_id}`)
+  .then(response => response.json())
+  .then(data => setBookings(data))
+  .catch(error => console.error(error));
+
+  }, [user_id]);
 
   const handleBookingSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +34,8 @@ const BookingsPage = () => {
       hotel_name: hotelName,
       status: 'pending',
       check_in_date: checkInDate,
-      check_out_date: checkOutDate
+      check_out_date: checkOutDate,
+      user_id: user_id, // Include the userId in the new booking data
     };
 
     fetch('http://localhost:9292/bookings', {
@@ -38,9 +43,9 @@ const BookingsPage = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(newBooking)
+      body: JSON.stringify(newBooking),
     })
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           // Booking created successfully, update the bookings list
           setBookings([...bookings, newBooking]);
@@ -54,7 +59,7 @@ const BookingsPage = () => {
           throw new Error('Failed to create booking');
         }
       })
-      .catch(error => {
+      .catch((error) => {
         // Handle the error
         console.error(error);
       });
@@ -68,26 +73,48 @@ const BookingsPage = () => {
       <form className="bookings-form" onSubmit={handleBookingSubmit}>
         <label className="bookings-label">
           Flight Name:
-          <input className="bookings-input" type="text" value={flightName} onChange={(e) => setFlightName(e.target.value)} />
+          <input
+            className="bookings-input"
+            type="text"
+            value={flightName}
+            onChange={(e) => setFlightName(e.target.value)}
+          />
         </label>
         <label className="bookings-label">
           Hotel Name:
-          <input className="bookings-input" type="text" value={hotelName} onChange={(e) => setHotelName(e.target.value)} />
+          <input
+            className="bookings-input"
+            type="text"
+            value={hotelName}
+            onChange={(e) => setHotelName(e.target.value)}
+          />
         </label>
         <label className="bookings-label">
           Check-in Date:
-          <input className="bookings-input" type="date" value={checkInDate} onChange={(e) => setCheckInDate(e.target.value)} />
+          <input
+            className="bookings-input"
+            type="date"
+            value={checkInDate}
+            onChange={(e) => setCheckInDate(e.target.value)}
+          />
         </label>
         <label className="bookings-label">
           Check-out Date:
-          <input className="bookings-input" type="date" value={checkOutDate} onChange={(e) => setCheckOutDate(e.target.value)} />
+          <input
+            className="bookings-input"
+            type="date"
+            value={checkOutDate}
+            onChange={(e) => setCheckOutDate(e.target.value)}
+          />
         </label>
-        <button className="bookings-submit" type="submit">Book Now</button>
+        <button className="bookings-submit" type="submit">
+          Book Now
+        </button>
       </form>
 
       <h2 className="bookings-section-title">Your Bookings</h2>
       <ul className="bookings-list">
-        {bookings.map(booking => (
+        {bookings.map((booking) => (
           <li className="bookings-item" key={booking.id}>
             {/* Display the booking details */}
             <div>Flight Name: {booking.flight_name}</div>

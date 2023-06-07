@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SignUp.css';
+import { AuthContext } from './AuthContext';
+
 
 const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { setAuthenticatedUser } = useContext(AuthContext);
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -28,6 +31,9 @@ const SignIn = () => {
         // Redirect to another page, e.g., dashboard
         navigate('/');
         alert(`Successfully logged in as ${data.name}`);
+        setAuthenticatedUser(data.user_id);
+         
+
       } else {
         console.log('Sign-in failed');
       }

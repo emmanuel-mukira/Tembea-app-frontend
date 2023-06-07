@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "./SingUp.css";
+import './SignUp.css';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -9,10 +9,7 @@ const SignIn = () => {
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    
-    // Extract email and password from form inputs
-    const { email, password } = e.target.elements;
-    
+
     try {
       const response = await fetch('http://localhost:9292/signIn', {
         method: 'POST',
@@ -20,17 +17,17 @@ const SignIn = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: email.value,
-          password: password.value,
+          email,
+          password,
         }),
       });
-      
+
       if (response.ok) {
         const data = await response.json();
         // Handle successful sign-in response
         // Redirect to another page, e.g., dashboard
         navigate('/');
-        console.log(data); // Example usage of the data variable
+        alert(`Successfully logged in as ${data.name}`);
       } else {
         console.log('Sign-in failed');
       }
@@ -38,24 +35,24 @@ const SignIn = () => {
       console.log('An error occurred during sign-in:', error);
     }
   };
-  
+
   return (
-    <div className='sign-in-container' >
+    <div className='sign-in-container'>
       <h1>Sign In</h1>
       <form onSubmit={handleSignIn}>
         <input
-          type="email"
-          placeholder="Email"
+          type='email'
+          placeholder='Email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-          type="password"
-          placeholder="Password"
+          type='password'
+          placeholder='Password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Sign In</button>
+        <button type='submit'>Sign In</button>
       </form>
     </div>
   );

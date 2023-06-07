@@ -35,7 +35,7 @@ const SignIn = () => {
          
 
       } else {
-        console.log('Sign-in failed');
+        alert('Sign-in failed');
       }
     } catch (error) {
       console.log('An error occurred during sign-in:', error);

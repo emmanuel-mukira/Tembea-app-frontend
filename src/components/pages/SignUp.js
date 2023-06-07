@@ -28,7 +28,7 @@ const SignUp = () => {
       if (response.ok) {
         // Handle successful sign-up response
         // Redirect to another page, e.g., dashboard
-        navigate('/');
+        navigate('/sign-in');
       } else {
         // Handle sign-up error response
         console.log('Sign-up failed');

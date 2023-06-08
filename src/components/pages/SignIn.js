@@ -32,8 +32,8 @@ const SignIn = () => {
         navigate('/');
         alert(`Successfully logged in as ${data.name}`);
         setAuthenticatedUser(data.user_id);
-         
-
+         console.log(data)
+        
       } else {
         alert('Sign-in failed');
       }

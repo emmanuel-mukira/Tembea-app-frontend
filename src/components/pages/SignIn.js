@@ -29,7 +29,7 @@ const SignIn = () => {
         const data = await response.json();
         // Handle successful sign-in response
         // Redirect to another page, e.g., dashboard
-        navigate('/');
+        navigate('/bookings');
         alert(`Successfully logged in as ${data.name}`);
         setAuthenticatedUser(data.user_id);
          console.log(data)

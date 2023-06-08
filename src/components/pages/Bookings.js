@@ -44,18 +44,21 @@ const BookingsPage = () => {
     e.preventDefault();
 
     const newBooking = {
-      flight_name: flightName,
+      flight_number: flightName,
       hotel_name: hotelName,
       status: status,
       check_in_date: checkInDate,
       check_out_date: checkOutDate,
       user_id: user_id,
     };
+    
     console.log(newBooking);
+
     fetch('http://localhost:9292/bookings', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'User-ID': user_id,
       },
       body: JSON.stringify(newBooking),
     })

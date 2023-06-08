@@ -39,6 +39,26 @@ const BookingsPage = () => {
     .catch((error) => console.error(error));
   }, [user_id]);
   
+const handleDeleteBooking = (bookingId) => {
+  fetch(`http://localhost:9292/bookings/${bookingId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'User-ID': user_id,
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        console.log('Booking deleted successfully');
+        setBookings(bookings.filter((booking) => booking.id !== bookingId));
+      } else {
+        throw new Error('Failed to delete booking');
+      }
+    })
+    .catch((error) => {
+      console.error('Error deleting booking:', error);
+    });
+};
 
   const handleBookingSubmit = (e) => {
     e.preventDefault();
@@ -68,7 +88,7 @@ const BookingsPage = () => {
           return response.json();
         } else {
           console.log(newBooking);
-
+          alert("You have not signed in")
           throw new Error('Failed to create booking');
         }
       })
@@ -185,16 +205,20 @@ const BookingsPage = () => {
           </tr>
         </thead>
         <tbody>
-          {bookings.map((booking) => (
-            <tr className="bookings-row" key={booking.id}>
-              <td>{booking.flight_name}</td>
-              <td>{booking.hotel_name}</td>
-              <td>{booking.status}</td>
-              <td>{booking.check_in_date}</td>
-              <td>{booking.check_out_date}</td>
-            </tr>
-        ))}
+  {bookings.map((booking) => (
+    <tr className="bookings-row" key={booking.id}>
+      <td>{booking.flight_name}</td>
+      <td>{booking.hotel_name}</td>
+      <td>{booking.status}</td>
+      <td>{booking.check_in_date}</td>
+      <td>{booking.check_out_date}</td>
+      <td>
+        <button className="delete-button" onClick={() => handleDeleteBooking(booking.id)}>Delete</button>
+      </td>
+    </tr>
+  ))}
 </tbody>
+
 
       </table>
     </div>

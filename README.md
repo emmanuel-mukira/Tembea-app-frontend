@@ -36,10 +36,7 @@ The travel app is a web-based platform that simplifies the process of booking fl
 Or you can access the web application directly via this [LINK.](link.com/)
 *****
 ## Dependencies
-- Package Name
-- Package Name
-- Package Name
-- Package Name
+
 *****
 ## Technologies Used
 1. React
